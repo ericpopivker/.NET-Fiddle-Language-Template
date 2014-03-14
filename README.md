@@ -35,9 +35,19 @@ There shouldn't be any changes to infrastructure, but it may require some extra 
 
 ## NancyFX Notes
 
-NancyFx is a bit different then just adding a new language.  The data structures will need to be extended to work a bit more like MVC.
+For NancyFX the data structures will need to be extended to work a bit more like MVC.
 
 Here are the data structures that will need to be extended:
+
+
+NancyFxCodeBlock : CodeBlock   (See MvcCodeBlock)
+
+
+NancyFxValidationError : ValidationError
+
+
+
+
 
 
 
