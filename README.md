@@ -45,7 +45,7 @@ Name like NemerleScript - consists of language and project type.  Some languages
 For Web Framwork like NancyFX you would add:
 
 - DotNetFiddle.NancyFx - NancyFxCodeHelper.cs and supporting classes.  Can be using CSharpCodeHelper internally.
-- DotNetFiddle.NancyFx.Tests - automated tests. Probably a little different then for CSharp Console
+- DotNetFiddle.NancyFx.Tests - automated tests. Probably a bit different than for CSharp Console
 - DotNetFiddle.NancyFx.Web - probably not needed as long as NancyFx uses C# and Razor
 
 
@@ -64,20 +64,23 @@ For NancyFX the data structures will need to be extended to work a bit more like
 Here are the data structures that will need to be extended:
 
 
-NancyFxCodeBlock : CodeBlock   (See MvcCodeBlock)
+- NancyFxCodeBlock : CodeBlock   (See MvcCodeBlock)
  View
  Controller
  NancyModule
  
 
-NancyFxValidationError : ValidationError
- NancyFxFileType  (similar to MvcFileType)
+-NancyFxValidationError : ValidationError
+  NancyFxFileType  (similar to MvcFileType)
 
 
-NancyFcCodeHelper.GetAutoCompleteItems() need to take one extra parameter
+- NancyFcCodeHelper.GetAutoCompleteItems() need to take one extra parameter
   NancyFxFileType
   
 NOTE: we don't support Auto Complete in MVC view right now, so may not be possibly in NancyFx
+
+
+Several unit tests specific to languages can be skipped like the ones related to Console.ReadLine.
 
 
 
