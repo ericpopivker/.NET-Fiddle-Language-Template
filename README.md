@@ -6,7 +6,7 @@ Uses this template to extend .NET Fiddle with support for .NET Languages like Ne
 Template includes basic .NET Fiddle infrastructure and sample implementation of "CSharp Console".
 
 
-The preliminary process will be:
+The preliminary process is:
 
 1. Fork this repo to something like ".NET Fiddle <Name of the language>".  Like ".NET Fiddle Nemerle"
 2. Add new projects specific to the language/.NET Web framework.  See Solution Structure section below.
@@ -20,9 +20,18 @@ We will keep improving this process every time we add new language / web framewo
 
 ## Solution Structure
 
+Infrastructure
+
 - DotNetFiddle.Code
-- DotNetFiddle.NemerleScript
-- 
+- DotNetFiddle.RunContainer
+- DotNetFiddle.RunContainer.Helpers
+
+
+CSharp Console implementation
+
+- DotNetFiddle.CSharpConsole
+- DotNetFiddle.CSharpConsole.Tests
+- DotNetFiddle.CSharpConsole.Web
 
 
 
@@ -34,7 +43,7 @@ For .NET Language line Nemerle you would add
 
 Name like NemerleScript - consists of language and project type.  Some languages like C#, VB.NET may support Console/Script/MVC, while others only Script - like F#, Nemerle.
 
-For Web Framworks like NancyFX it would be:
+For Web Framwork like NancyFX you would be:
 
 
 
