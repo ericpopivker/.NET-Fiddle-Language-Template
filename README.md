@@ -1,7 +1,7 @@
 .NET Fiddle - Language Template
 ===============================
 
-Uses this template to extend .NET Fiddle with support for .NET Languages like Nemerle and .NET Web frameworks like NancyFX into .NET Fiddle.
+Use this template to extend .NET Fiddle with support for .NET Languages like Nemerle and .NET Web frameworks like NancyFX into .NET Fiddle.
 
 Template includes basic .NET Fiddle infrastructure and sample implementation of "CSharp Console".
 
