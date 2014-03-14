@@ -7,7 +7,7 @@ using DotNetFiddle.Infrastructure.Worker;
 
 namespace DotNetFiddle.Infrastructure
 {
-	[DataContract, KnownType(typeof(ConsoleOrScriptRunOpts)), KnownType(typeof(MvcRunOpts)), KnownType(typeof(WebFormsRunOpts))]
+    [DataContract, KnownType(typeof(ConsoleOrScriptRunOpts)), KnownType(typeof(MvcRunOpts)), KnownType(typeof(NancyRunOpts)), KnownType(typeof(WebFormsRunOpts))]
 	[Serializable]
 	public class RunOptsBase
 	{
@@ -86,6 +86,49 @@ namespace DotNetFiddle.Infrastructure
 		}
 	}
 
+    [DataContract]
+    [Serializable]
+    public class NancyRunOpts : RunOptsBase
+    {
+        public NancyRunOpts()
+        {
+            CodeBlock = new NancyCodeBlock();
+            HttpMethod = "GET";
+        }
+
+        [DataMember]
+        public NancyViewEngine ViewEngine { get; set; }
+
+        [DataMember]
+        public string HttpMethod { get; set; }
+
+        [DataMember]
+        public string PostBody { get; set; }
+
+        [DataMember]
+        public string ContentType { get; set; }
+
+        [DataMember]
+        public string Controller { get; set; }
+
+        [DataMember]
+        public string Action { get; set; }
+
+        [DataMember]
+        public string QueryString { get; set; }
+
+        public NancyPostBackOpts GetPostOpts()
+        {
+            return new NancyPostBackOpts
+            {
+                Language = Language,
+                NancyViewEngine = ViewEngine,
+                NuGetDllReferences = new List<string>(NuGetDllReferences),
+                CodeBlock = new NancyCodeBlock((NancyCodeBlock)CodeBlock)
+            };
+        }
+    }
+
 	[DataContract]
 	[Serializable]
 	public class WebFormsRunOpts : RunOptsBase
@@ -106,5 +149,15 @@ namespace DotNetFiddle.Infrastructure
 		public MvcViewEngine MvcViewEngine { get; set; }
 		public MvcCodeBlock CodeBlock { get; set; }
 	}
+
+    public class NancyPostBackOpts
+    {
+        public const string SessionDataId = "NANCY_POSTBACK_OPTS";
+
+        public Language Language { get; set; }
+        public List<string> NuGetDllReferences { get; set; }
+        public NancyViewEngine NancyViewEngine { get; set; }
+        public NancyCodeBlock CodeBlock { get; set; }
+    }
 
 }

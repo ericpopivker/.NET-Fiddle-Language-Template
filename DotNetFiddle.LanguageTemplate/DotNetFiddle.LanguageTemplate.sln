@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30110.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetFiddle.CSharpConsole", "DotNetFiddle.CSharpConsole\DotNetFiddle.CSharpConsole.csproj", "{7DD95644-74B2-4A7C-90EE-C7CC637331FC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetFiddle.CSharpConsole.Tests", "DotNetFiddle.CSharpConsole.Tests\DotNetFiddle.CSharpConsole.Tests.csproj", "{71ED7650-DFB4-40D1-AB12-FFE7C8A96F13}"
@@ -12,6 +14,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetFiddle.RunContainer.Helpers", "DotNetFiddle.RunContainer.Helpers\DotNetFiddle.RunContainer.Helpers.csproj", "{3A307587-F808-4202-B531-8AB96B81488C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetFiddle.CSharpConsole.Web", "DotNetFiddle.CSharpConsole.Web\DotNetFiddle.CSharpConsole.Web.csproj", "{CB8B1A13-B662-44A3-A22F-E8F735FE0BEA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetFiddle.NancyFx", "DotNetFiddle.NancyFx\DotNetFiddle.NancyFx.csproj", "{CF4D3DE0-A5F4-4B48-A147-09EFD8EA4212}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,6 +47,10 @@ Global
 		{CB8B1A13-B662-44A3-A22F-E8F735FE0BEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CB8B1A13-B662-44A3-A22F-E8F735FE0BEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CB8B1A13-B662-44A3-A22F-E8F735FE0BEA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF4D3DE0-A5F4-4B48-A147-09EFD8EA4212}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF4D3DE0-A5F4-4B48-A147-09EFD8EA4212}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF4D3DE0-A5F4-4B48-A147-09EFD8EA4212}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF4D3DE0-A5F4-4B48-A147-09EFD8EA4212}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

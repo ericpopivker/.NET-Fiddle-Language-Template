@@ -22,7 +22,9 @@ namespace DotNetFiddle.Infrastructure
 		[Description("Script")]
 		Script,
 		[Description("MVC")]
-		Mvc
+		Mvc,
+        [Description("Nancy")]
+        Nancy
 	}
 
 	[Serializable]
@@ -54,4 +56,24 @@ namespace DotNetFiddle.Infrastructure
 		[Description("Controller")]
 		Controller
 	}
+
+    [Serializable]
+    public enum NancyFileType
+    {
+        [Description("Model")]
+        Model,
+        [Description("View")]
+        View,
+        [Description("Module")]
+        Module
+    }
+
+    [Serializable]
+    public enum NancyViewEngine
+    {
+        [Description("Razor")]
+        Razor,
+        [Description("SSVE")]
+        Aspx
+    }
 }

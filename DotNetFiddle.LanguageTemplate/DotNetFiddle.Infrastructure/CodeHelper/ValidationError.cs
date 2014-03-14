@@ -24,6 +24,7 @@ namespace DotNetFiddle.Infrastructure
 		public int Column { get; set; }
 		public string FileName { get; set; }
 		public MvcFileType? MvcFileType { get; set; }
+        public NancyFileType? NancyFileType { get; set; }
 
 		public static ValidationError CreateFromCommonDiagnostic(CommonDiagnostic diag)
 		{
