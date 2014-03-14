@@ -1,10 +1,11 @@
 App_Data/*.ldf
 App_Data/*.mdf
-bin/*
-Bin/*
-obj/*
-csx/*
-TestResults/*
+
+bin/
+Bin/
+obj/
+csx/
+TestResults/
 *.suo
 *.rdl.data
 *.sqlsuo

@@ -1,0 +1,77 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+	<link rel="stylesheet" type="text/css" href="Content/packages/codemirror-3.22/lib/codemirror.css" />
+	<link rel="stylesheet" type="text/css" href="Content/css/csharpcolors.css" />
+
+	<style type="text/css">
+		.CodeMirror {
+			border: 1px solid black;
+			font-size: 13px;
+		}
+	</style>
+
+	<script src="Content/packages/codemirror-3.22/lib/codemirror.js" type="text/javascript"></script>
+	<script src="Content/packages/codemirror-3.22/mode/clike/clike.js" type="text/javascript"></script>
+
+	<title>CodeMirror: C# Console demonstration</title>
+
+</head>
+<body style="padding: 20px;">
+
+	<p>Demonstration of CodeMirror's C# Console</p>
+
+	<form>
+
+		<textarea id="code">
+using System;
+
+namespace Example
+{
+	/// &lt;summary>
+	/// Represents a person employed at the company
+	/// &lt;/summary>
+	public class Employee : Person
+	{
+		#region Properties
+		
+		/// &lt;summary>
+		/// Gets or sets the first name.
+		/// &lt;/summary>
+		/// &lt;value>The first name.&lt;/value>
+		public string FirstName { get; set; }
+
+		#endregion
+
+		/// &lt;summary>
+		/// Calculates the salary.
+		/// &lt;/summary>
+		/// &lt;param name="grade">The grade.&lt;/param>
+		/// &lt;returns>&lt;/returns>
+		public decimal CalculateSalary(int grade)
+		{
+			if (grade > 10)
+				return 1000;
+			return 500;
+		}
+	}
+}
+</textarea>
+
+	</form>
+
+
+
+	<script type="text/javascript">
+		var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+			lineNumbers: true,
+			indentUnit: 4,
+			indentWithTabs: true,
+			mode: "text/x-csharp"
+		});
+
+		editor.setSize(800, 400);
+	</script>
+
+</body>
+</html>
