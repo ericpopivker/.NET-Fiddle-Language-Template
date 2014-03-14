@@ -70,7 +70,7 @@ Here are the data structures that will need to be extended:
  NancyModule
  
 
--NancyFxValidationError : ValidationError
+- NancyFxValidationError : ValidationError
   NancyFxFileType  (similar to MvcFileType)
 
 
@@ -81,6 +81,8 @@ NOTE: we don't support Auto Complete in MVC view right now, so may not be possib
 
 
 Several unit tests specific to languages can be skipped like the ones related to Console.ReadLine.
+
+If RunContainer is not sufficient to execute NancyFx, it can also be extended. We had to add some extra functionality for Mvc. 
 
 
 
