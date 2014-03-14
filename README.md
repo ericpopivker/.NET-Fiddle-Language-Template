@@ -22,28 +22,31 @@ We will keep improving this process every time we add new language / web framewo
 
 Infrastructure
 
-- DotNetFiddle.Code
-- DotNetFiddle.RunContainer
-- DotNetFiddle.RunContainer.Helpers
+- DotNetFiddle.Infrastructure - all bases classes and helpers
+- DotNetFiddle.RunContainer - assembly used to execute fiddled in AppDomain
+- DotNetFiddle.RunContainer.Helpers - implements Dump() method
 
 
 CSharp Console implementation
 
-- DotNetFiddle.CSharpConsole
-- DotNetFiddle.CSharpConsole.Tests
-- DotNetFiddle.CSharpConsole.Web
+- DotNetFiddle.CSharpConsole   - has CSharpConsoleCodeHelper which implements compiliaton, intellisence, validation and execution of CSharp Console fiddles
+- DotNetFiddle.CSharpConsole.Tests - unit tests for CSharpConsoleCodeHelper being called directly as well as hosted within RunContainer
+- DotNetFiddle.CSharpConsole.Web - CodeMirror template supporting CSharp 
 
 
+For .NET Language like Nemerle you would add
 
-For .NET Language line Nemerle you would add
-
-- DotNetFiddle.NemerleScript
-- DotNetFiddle.NemerleScript.Tests
-- DotNetFiddle.NemerleScript.Web
+- DotNetFiddle.NemerleScript - NemerleScriptCodeHelper.cs and supporting classes
+- DotNetFiddle.NemerleScript.Tests - all tests like CSharpConsole
+- DotNetFiddle.NemerleScript.Web - CodeMirror template that supports Nemerle
 
 Name like NemerleScript - consists of language and project type.  Some languages like C#, VB.NET may support Console/Script/MVC, while others only Script - like F#, Nemerle.
 
-For Web Framwork like NancyFX you would be:
+For Web Framwork like NancyFX you would add:
+
+- DotNetFiddle.NancyFx - NancyFxCodeHelper.cs and supporting classes.  Can be using CSharpCodeHelper internally.
+- DotNetFiddle.NancyFx.Tests - automated tests. Probably a little different then for CSharp Console
+- DotNetFiddle.NancyFx.Web - probably not needed as long as NancyFx uses C# and Razor
 
 
 
@@ -62,11 +65,19 @@ Here are the data structures that will need to be extended:
 
 
 NancyFxCodeBlock : CodeBlock   (See MvcCodeBlock)
-
+ View
+ Controller
+ NancyModule
+ 
 
 NancyFxValidationError : ValidationError
+ NancyFxFileType  (similar to MvcFileType)
 
 
+NancyFcCodeHelper.GetAutoCompleteItems() need to take one extra parameter
+  NancyFxFileType
+  
+NOTE: we don't support Auto Complete in MVC view right now, so may not be possibly in NancyFx
 
 
 
