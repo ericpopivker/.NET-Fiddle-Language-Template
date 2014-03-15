@@ -549,7 +549,7 @@ namespace DotNetFiddle.Infrastructure
 			throw new NotImplementedException();
 		}
 
-        private void RunNancy(RunOptsBase opts, RunResult result)
+	    protected virtual void RunNancy(RunOptsBase opts, RunResult result)
         {
             throw new NotImplementedException();
         }
