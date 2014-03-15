@@ -159,6 +159,9 @@ namespace DotNetFiddle.Infrastructure
 					case ProjectType.Mvc:
 						RunMvc(opts, result);
 						break;
+                        case ProjectType.Nancy:
+				        RunNancy(opts, result);
+                        break;
 					default:
 						throw new NotImplementedException();
 				}
@@ -202,7 +205,9 @@ namespace DotNetFiddle.Infrastructure
 			return result;
 		}
 
-		protected bool VerifyDeniedCode(string code, RunResult result)
+	    
+
+	    protected bool VerifyDeniedCode(string code, RunResult result)
 		{
 			Verify.Argument.IsNotNull(code, "code");
 			const string DeniedCode = "PermissionSet";
@@ -543,5 +548,10 @@ namespace DotNetFiddle.Infrastructure
 		{
 			throw new NotImplementedException();
 		}
+
+	    protected virtual void RunNancy(RunOptsBase opts, RunResult result)
+        {
+            throw new NotImplementedException();
+        }
 	}
 }

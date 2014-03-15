@@ -75,6 +75,47 @@ namespace DotNetFiddle.Infrastructure
 		}
 	}
 
+    [DataContract]
+    [Serializable]
+    public class NancyCodeBlock : CodeBlock
+    {
+        [Required]
+        [StringLength(1000, ErrorMessage = "The {0} must be between {2} and {1} characters long.")]
+        [Display(Name = "Code")]
+        [DataMember]
+        public string Model { get; set; }
+
+        [Required]
+        [StringLength(1000, ErrorMessage = "The {0} must be between {2} and {1} characters long.")]
+        [Display(Name = "Code")]
+        [DataMember]
+        public string View { get; set; }
+
+        [Required]
+        [StringLength(1000, ErrorMessage = "The {0} must be between {2} and {1} characters long.")]
+        [Display(Name = "Code")]
+        [DataMember]
+        public string Module { get; set; }
+
+        public NancyCodeBlock()
+        {
+        }
+
+        public NancyCodeBlock(NancyCodeBlock copy)
+        {
+            if (copy == null)
+                return;
+
+            Model = copy.Model;
+            View = copy.View;
+            Module = copy.Module;
+        }
+        public override CodeBlock Clone()
+        {
+            return new NancyCodeBlock(this);
+        }
+    }
+
 	[DataContract]
 	[Serializable]
 	public class WebFormsCodeBlock : CodeBlock
